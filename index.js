@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const shape = require('./lib/alt-shapes')
+const shape = require('./lib/shapes')
 const fs = require('fs');
 
 const questions = [
