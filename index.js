@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const shape = require('./lib/shapes')
+const shape = require('./lib/shapes.js')
 const fs = require('fs');
 
 const questions = [
@@ -28,40 +28,76 @@ const questions = [
     },
 ]
 
-// function generateSVG (response) {
+function generateSVG (response) {
+    if (response.shape === "circle") {
+        const image = new shape.Circle(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "oval") {
+        const image = new shape.Oval(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "triangle") {
+        const image = new shape.Triangle(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "square") {
+        const image = new shape.Square(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "rectangle") {
+        const image = new shape.Rectangle(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "pentagon") {
+        const image = new shape.Pentagon(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "hexagon") {
+        const image = new shape.Hexagon(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "octogon") {
+        const image = new shape.Octogon(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    } else if (response.shape === "diamond") {
+        const image = new shape.Diamond(response.text, response.textColor, response.shape, response.shapeColor);
+        image.startLogo(response)
+        image.renderShape(response)
+        image.renderText(response)
+        image.finishLogo(response)
+    }
+}
 
-// }
+function decideLength(response) {
+    if (response.text.length > 3) {
+        console.error("Please enter only 3 cahracters when entering text")
+    } else {
+        generateSVG(response);
+    }
+}
 
 inquirer
     .prompt(questions)
     .then((response) => {
-        console.log(response)
-        if (response.shape === "circle") {
-            const image = new shape.Circle(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "oval") {
-            const image = new shape.Oval(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "triangle") {
-            const image = new shape.Triangle(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "square") {
-            const image = new shape.Square(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "rectangle") {
-            const image = new shape.Rectangle(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "pentagon") {
-            const image = new shape.Pentagon(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "hexagon") {
-            const image = new shape.Hexagon(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "octogon") {
-            const image = new shape.Octogon(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        } else if (response.shape === "diamond") {
-            const image = new shape.Diamond(response.text, response.textColor, response.shape, response.shapeColor);
-            image.render(response)
-        }
+        decideLength(response);
     })
+
+module.exports = decideLength
