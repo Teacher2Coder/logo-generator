@@ -88,9 +88,10 @@ function generateSVG (response) {
 
 function decideLength(response) {
     if (response.text.length > 3) {
-        console.error("Please enter only 3 cahracters when entering text")
+        console.error("Please enter only 3 characters when entering text!")
     } else {
         generateSVG(response);
+        console.log(`${response.text}.svg created!`)
     }
 }
 
