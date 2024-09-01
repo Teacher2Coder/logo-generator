@@ -39,6 +39,8 @@ Finally, the user will be asked to select a color for the shape. Their choices i
 When all prompts have been answered an svg file will be created named after the text that the user inputed. The user can navigate over to the newly created file and observe it. When the user opens the file in a browser, the logo will available for the user to see.
 
 If the user wants to see examples, they can look in the examples directory for other svg files created using the application.
+
+![Demo Movie](./assets/logo-gen-demo.mov)
  
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
