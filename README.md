@@ -75,8 +75,6 @@ To run the appropriate tests, use
 ```
 npm run test
 ```
-
-All test will be run and several svg files will be created. Feel free to delete the svg files after the test is complete.
  
 ## Questions
 * GitHub: [@Teacher2Coder](https://www.github.com/Teacher2Coder)
